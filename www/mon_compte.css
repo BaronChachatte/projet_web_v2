@@ -1,0 +1,92 @@
+/* mise en place container pour la page compte */
+.container{
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: rgba(230, 230, 230, 0.9);
+    height: 520px;
+    width: 600px;
+    margin: 75px auto 100px auto;
+    border-radius: 10px;
+    flex-wrap: wrap;
+}
+
+.formulaire {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: thin;
+    height: 480px;
+    width: 405px;
+    font-family: Arial, sans-serif;
+}
+
+.formulaire p {
+    margin: 15px 0 15px 15px;
+}
+
+.formulaire_logout {
+    margin: 15px 0 15px 15px;
+    background-color: rgb(235, 205, 88);
+    width: 30%;
+    cursor: pointer;
+}
+
+.modifier {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    height: 480px;
+    width: 135px;
+    font-family: Arial, sans-serif;
+}
+
+.modifier a {
+    text-decoration: none;
+    margin: 25px 0;
+}
+
+.delete_account{
+    margin: 15px 0 15px 15px;
+    background-color: rgb(235, 205, 88);
+    width: 40%;
+    cursor: pointer;
+}
+
+/* responsive page mon compte */
+
+/* tablette */
+@media all and (max-width:768px) {
+    .container{
+        margin: 100px auto 75px auto;
+        width: 90%;
+    }
+
+    .formulaire {
+        width: 355px;
+    }
+
+    .modifier {
+        align-items: center;
+        width: 35px;
+    }
+}
+
+/* smartphone */
+@media all and (max-width:480px) {
+    .container{
+        width: 100%;
+    }
+
+    .formulaire {
+        width: 280px;
+    }
+
+    .modifier {
+        width: 35px;
+    }
+}
