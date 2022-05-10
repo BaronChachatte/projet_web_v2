@@ -38,7 +38,7 @@
 .modifier {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-end;
     height: 480px;
     width: 135px;
@@ -47,7 +47,14 @@
 
 .modifier a {
     text-decoration: none;
-    margin: 15px 0;
+    margin: 25px 0;
+}
+
+.delete_account{
+    margin: 15px 0 15px 15px;
+    background-color: rgb(235, 205, 88);
+    width: 40%;
+    cursor: pointer;
 }
 
 /* responsive page mon compte */
