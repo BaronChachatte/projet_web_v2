@@ -123,12 +123,12 @@
     <div class="footer">
         <div>
             <a href="index.php">Accueil</a>
-            <a href="mes_appareils.html">Appareils</a>
+            <a href="mes_appareils.php">Appareils</a>
         </div>
 
         <div>
             <a href="connection_inscription.php">Login</a>
-            <a href="mon_compte.html">Compte</a>
+            <a href="mon_compte.php">Compte</a>
         </div>
     </div>
 </body>
