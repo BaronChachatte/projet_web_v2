@@ -37,14 +37,18 @@
     <!-- mise en place container -->
     <div class="container">
         <div class="formulaire">
-            <p>Email: 123@gmail.com</p>
-            <p>Mot de passe : ******</p>
-            <p>Numéro de téléphone : 0677784652</p>
-            <p>Nom : leclerc</p>
-            <p>Prénom : Patrick</p>
-            <p>Adresse : 51 rue nationale</p>
-            <p>Langue : Français</p>
-            <p>Mode de paiement : Paypal</p>
+            <?php
+                $sql = "SELECT * FROM admin WHERE user='".$_SESSION['username']."'";
+                $result = mysqli_query($link, $sql);
+
+                while($row = mysqli_fetch_array($result)){
+                    echo "<p>"."Nom : ".$row['name']."</p>"."</br>";
+                    echo "<p>"."Prénom : ".$row['first_name']."</p>"."</br>";
+                    echo "<p>"."Mail : ".$row['email']."</p>"."</br>";
+                    echo "<p>"."Téléphone : ".$row['phone_number']."</p>"."</br>";
+                    echo "<p>"."Adresse : ".$row['adress']."</p>"."</br>";
+                }
+            ?>
             <div>
                 <form action="./deconnexion.php" method="post">
                     <input class="formulaire_logout" type="submit" value="Log out">
@@ -61,10 +65,6 @@
             <a href="#">modifier</a>
             <a href="#">modifier</a>
             <a href="#">modifier</a>
-            <a href="#">modifier</a>
-            <a href="#">modifier</a>
-            <a href="#">modifier</a>
-            <a href="#">l/o</a>
         </div>
     </div>
 
