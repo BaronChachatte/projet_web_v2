@@ -1,0 +1,125 @@
+/*navbar*/
+
+.logo-navbar {
+    height: 40px;
+    margin: 5px 0 5px 0;
+}
+
+nav {
+    background: rgb(74, 74, 74);
+    height: 50px;
+    top: 0;
+    width: 100%;
+}
+
+nav .navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+nav a {
+    align-items: center;
+    background: rgba(235, 206, 88, 0.5);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    height: 30px;
+    justify-content: center;
+    margin: 10px 40px 10px 0;
+    text-decoration: none;
+    width: 100px;
+}
+
+nav a:hover:not(.active-navbar) {
+    background: rgba(235, 206, 88);
+    border-radius: 10px;
+    color: black;
+}
+
+.active-navbar {
+    background-color: rgb(235, 205, 88);
+    border-radius: 10px;
+    color: black;
+}
+
+.logo{
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 40px;
+}
+
+.lien{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/*burger*/
+
+.label-burger, #active-burger {
+    display: none;
+}
+
+/*responsive burger/navbar*/
+
+@media all and (max-width:768px) {
+    .label-burger {
+        align-items: center;
+        color: white;
+        cursor: pointer;
+        display: flex;
+        font-size: 30px;
+        justify-content: center;
+        margin: 0 auto;
+        width: 30px;
+    }
+
+    .logo-navbar {
+        margin: 5px 0 5px 0;
+    }
+
+    nav {
+        height: 50px;
+        position: fixed;
+    }
+
+    nav .navbar {
+        background: rgb(74, 74, 74);
+        display: none;
+        flex-direction: column;
+        height: 220px;
+    }
+
+    nav .navbar:last-child {
+        margin-right: 0;
+    }
+
+    nav .navbar a {
+        width: 100px;
+        height: 30px;
+        margin: 5px 0 5px 0;
+    }
+
+    nav .navbar a:last-child {
+        margin: 5px 0 10px 0;
+    }
+
+    #active-burger:checked + .navbar {
+        display: flex;
+    }
+
+    .lien {
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        margin: 0;
+    }
+    .logo {
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+    }
+}

@@ -1,0 +1,192 @@
+.active-device-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin: 3% 1.5% 0% 1.5%;
+    padding: 0 0 50px 0;
+}
+
+.devices-container {
+    align-items: center;
+    background-color: rgb(74, 74, 74);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(230, 230, 230, 0.9);
+    width: 250px;
+    margin: 0 2.5% 0 0;
+}
+
+.active-device-settings {
+    display: flex;
+    align-items: center;
+    background-color: rgba(230, 230, 230, 0.9);
+    border-radius: 10px;
+    width: 80%;
+}
+
+.active-device-img{
+    background-image: url("../images/appareils/appareil5.png");
+    background-position: center;
+    background-size: cover;
+    height: 40em;
+    width: 75%;
+    border-radius: 10px;
+}
+
+.boutton{
+    display: flex;
+    margin: 0 auto 0 auto;
+}
+
+.active-device-settings button{
+    height: 45px;
+    width: 90px;
+    border-radius: 20px;
+    margin-right: 2em;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0px 5px 5px;
+}
+
+.active-device-settings button:hover {
+    background-color: rgb(76, 76, 76);
+}
+
+.devices a {
+    align-items: center;
+    background: rgba(147, 147, 147, 0.5);
+    border-radius: 10px;
+    color: rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    height: 30px;
+    justify-content: center;
+    margin: 5px 10px 0 10px;
+    text-decoration: none;
+    width: 225px;
+    transition: 0.2s;
+}
+
+.devices a:first-child {
+    margin: 15px auto 5px auto;
+}
+
+.devices a:last-child {
+    margin: 5px auto 0 auto;
+}
+
+.devices a:hover:not(.active-device) {
+    background-color: rgb(235, 205, 88) ;
+    color: black;
+    height: 40px;
+    box-shadow: 5px 5px 11px black;
+}
+
+
+.devices a.active-device {
+    background-color: rgb(235, 205, 88);
+    border-radius: 10px;
+    color: black;
+}
+
+.devices-inputs {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+    margin: 175px 0 5px 0;
+}
+
+.devices-inputs-add {
+    background-color: black;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: larger;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+}
+
+.devices-inputs-delete {
+    color: white;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(191, 0, 0);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 70%;
+    margin: 0 0 5px 0;
+}
+
+/* réglage problème de positionnement des bouttons a une certaines résolutions */
+@media all and (min-width:768px) and (max-width:1201px) {
+    .boutton{
+        display: block;
+        margin: 0 0 0 5%;
+    }
+    .active-device-settings button{
+        height: 45px;
+        width: 90px;
+        border-radius: 20px;
+        margin-top: 10%;
+        background-color: black;
+        color: white;
+        cursor: pointer;
+        box-shadow: 0px 5px 5px;
+    }
+}
+
+/* responsive appareil1 */
+@media all and (max-width:768px) {
+    .active-device-img{
+        height: 20em;
+        width: 100%;
+
+    }
+    .active-device-container {
+        display: flex;
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        margin: 2.5% 2.5% 2.5% 2.5%;
+        padding: 50px 0 0 0;
+    }
+
+    .devices-container {
+        margin: 0 10px 0 0;
+    }
+
+    .devices-inputs {
+        margin: 80px 0 5px 0;
+    }    
+
+    .devices a {
+        width: 175px;
+        margin: 10px 10px 0 10px;
+    }
+    .devices a:last-child {
+        margin: 10px auto 0 auto;
+    }
+    .active-device-settings{
+        display: flex;
+        flex-direction: column;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+    .active-device-settings button{
+        margin: 10px 20px;
+    }
+}

@@ -1,0 +1,91 @@
+.devices-container {
+    align-items: center;
+    background-color: rgb(74, 74, 74);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: rgba(230, 230, 230, 0.9);
+    width: 250px;
+    margin: 7.5% auto 10% auto;
+}
+
+.devices a {
+    align-items: center;
+    background: rgba(235, 206, 88, 0.5);
+    border-radius: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    height: 30px;
+    justify-content: center;
+    margin: 5px auto;
+    text-decoration: none;
+    width: 225px;
+    transition: 0.2s;
+}
+
+.devices a:first-child {
+    margin: 15px auto 5px auto;
+}
+
+.devices a:last-child {
+    margin: 5px auto 0 auto;
+}
+
+.devices a:hover{
+    background-color: rgb(235, 205, 88) ;
+    color: black;
+    height: 40px;
+    box-shadow: 5px 5px 11px black;
+}
+
+.devices-inputs {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+    width: 100%;
+    margin: 175px 0 5px 0;
+}
+
+.devices-inputs-add {
+    background-color: black;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: larger;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+}
+
+.devices-inputs-delete {
+    color: white;
+    border-radius: 15px;
+    border: none;
+    background-color: rgb(191, 0, 0);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 70%;
+    margin: 0 0 5px 0;
+}
+
+/* responsive mes_appareils */
+@media all and (max-width:768px) {
+    .devices-container{
+        margin: 20% auto 12.5% auto;
+    }
+    .devices a {
+        background-color: rgb(235, 205, 88) ;
+        color: black;
+    }
+}

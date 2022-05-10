@@ -1,0 +1,42 @@
+/*footer*/
+
+.footer{
+    bottom: 0;
+    position: fixed;
+    align-items: center;
+    background-color: rgb(74, 74, 74);
+    display: flex;
+    height: 50px;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.footer a{
+    align-items: center;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.5);
+    display: flex;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    height: 20px;
+    justify-content: center;
+    text-decoration: none;
+    width: 100px;
+}
+
+.footer a:hover{
+    background-color: rgb(235, 205, 88) ;
+    color: black;
+}
+
+/*responsive footer*/
+
+@media all and (max-width:768px) {
+    .footer {
+        display: none;
+    }
+
+    .footer a {
+        display: none;
+    }
+}
