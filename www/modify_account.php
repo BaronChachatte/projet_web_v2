@@ -1,8 +1,9 @@
 <?php
     require_once("./fonction.php");
-    check_session();
     require_once("./config.php");
+    check_session();
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -14,7 +15,7 @@
     <link rel="stylesheet" href="css/body.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/mon_compte.css">
+    <link rel="stylesheet" href="css/modify_account.css">
 </head>
 
 <body>
@@ -36,28 +37,28 @@
 
     <!-- mise en place container -->
     <div class="container">
-        <div class="formulaire">
+        <form class="formulaire" action="./modify.php" method="post">
             <?php
-                $sql = "SELECT * FROM admin WHERE user='".$_SESSION['username']."'";
-                $result = mysqli_query($link, $sql);
+                $sql="SELECT * FROM admin WHERE user='".$_SESSION["username"]."'";
+                $result=mysqli_query($link, $sql);
+                $row = mysqli_fetch_array($result);
 
-                while($row = mysqli_fetch_array($result)){
-                    echo "<p>"."Nom : ".$row['name']."</p>"."</br>";
-                    echo "<p>"."Prénom : ".$row['first_name']."</p>"."</br>";
-                    echo "<p>"."Mail : ".$row['email']."</p>"."</br>";
-                    echo "<p>"."Téléphone : ".$row['phone_number']."</p>"."</br>";
-                    echo "<p>"."Adresse : ".$row['adress']."</p>"."</br>";
-                }
+                $name = $row["name"];
+                $first_name = $row["first_name"];
+                $mail = $row["email"];
+                $adresse = $row["adress"];
+                $phone = $row["phone_number"];
+
+                echo $mail;
+                echo $adresse;
+                echo "<input type='text' placeholder='modifiez votre prénom' name='new_first_name' value=$first_name>";
+                echo "<input type='text' placeholder='modifiez votre nom' name='new_name' value=$name>";
+                echo "<input type='text' placeholder='modifiez votre mail' name='new_mail' value=$mail>";
+                echo "<input type='text' placeholder='modifiez votre adresse' name='new_adresse' value=$adresse>";
+                echo "<input type='text' placeholder='modifiez votre téléphone' name='new_phone' value=$phone>";
+                echo '<input class="modify_button" type="submit" value="confirmer les modifications">';
             ?>
-            <div>
-                <form action="./deconnexion.php" method="post">
-                    <input class="formulaire_logout" type="submit" value="Log out">
-                </form>
-                <form action="./delete.php">
-                    <input class="delete_account" type="submit" value="supprimer le compte">
-                </form>
-            </div>
-        </div>
+        </form>
 
         <div class="modifier">
             <a href="./modify_account.php">modifier vos données personnelles</a>
