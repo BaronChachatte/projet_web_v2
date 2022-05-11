@@ -9,13 +9,19 @@
 	else {
 		$user=$_POST["user"];
 		$password=$_POST["password"];
+
+		$options = [
+            'cost' => 12,
+        ];
+        $hashmdp = password_hash($password, PASSWORD_BCRYPT, $options);
+
 		$first_name=$_POST["first_name"];
 		$name=$_POST["name"];
 		$adress=$_POST["adress"];
 		$phone_number=$_POST["phone_number"];
 		$email=$_POST["email"];
 
-		$sql="INSERT INTO admin (user,password,first_name,name,adress,phone_number,email) VALUES('".$user."','".$password."','".$first_name."','".$name."','".$adress."','".$phone_number."','".$email."')";
+		$sql="INSERT INTO admin (user,password,first_name,name,adress,phone_number,email) VALUES('".$user."','".$hashmdp."','".$first_name."','".$name."','".$adress."','".$phone_number."','".$email."')";
 
 		if($result=mysqli_query($link,$sql)) {
 			header("location: ./connection_inscription.php?text=L'utilisateur ".$user." a bien été ajouté !");
