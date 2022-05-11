@@ -1,0 +1,27 @@
+.devices-container {
+    align-items: center;
+    background-color: rgb(74, 74, 74);
+    border-radius: 10px;
+    display: flex;
+    justify-content: column;
+    background-color: rgba(230, 230, 230, 0.9);
+    width: 50%;
+    height: 200px;
+    margin: 7.5% auto 10% auto;
+}
+.formapp
+{
+    display: block;
+}
+
+
+/* responsive mes_appareils */
+@media all and (max-width:768px) {
+    .devices-container{
+        margin: 20% auto 12.5% auto;
+    }
+    .devices a {
+        background-color: rgb(235, 205, 88) ;
+        color: black;
+    }
+}
