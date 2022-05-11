@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="css/body.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/mes_appareils.css">
+    <link rel="stylesheet" href="css/addApp.css">
 </head>
 
 <body>
@@ -27,7 +27,7 @@
             </div>
             <div class="lien">
                 <a href="index.php">Accueil</a>
-                <a class="active-navbar" href="mes_appareils.php">Appareils</a>
+                <a href="mes_appareils.php">Appareils</a>
                 <a href="connection_inscription.php">Login</a>
                 <a href="mon_compte.php">Compte</a>
             </div>
@@ -36,29 +36,37 @@
 
     <div class="devices-container">
         <div class="devices">
-            <?php
-                $sql="SELECT * FROM admin WHERE user='".$_SESSION["username"]."'";
-                $result=mysqli_query($link, $sql);
-                $row = mysqli_fetch_array($result);
-                $iduser=$row["index_id"];
-                $sql="SELECT * FROM appareil WHERE id_user='".$iduser."'";
-                $result=mysqli_query($link, $sql);
-                while($row =  mysqli_fetch_array($result))
-                {
-                    $nomappareil=$row["nom_app"];
-                    echo("<a>".$nomappareil."</a>");
-                }
-            ?>
+            <form class="formapp" action="nouv_app.php" method="POST">
+
+                <select name="menu_cat" size="1">
+
+                    <option value="camera">camera
+
+                    <option value="thermostat">thermostat
+
+                    <option value="eclairage">eclairage
+
+                    <option value="aspirateur">aspirateur
+
+                </select>
+
+                <input type="nom" name="nom_app" class="nom_app" placeholder="nom appareil">
+
+                <input class="inputs-add" type="submit" value="Ajouter">
+            </form>
         </div>
 
-        <div class="devices-inputs">
-            <form action='./addApp.php' method='post'>
-                <input class="devices-inputs-add" type="submit" value="+">
-            </form>
+        <?php
+            if (isset($_GET["text"]) && !empty($_GET["text"])) 
+            {
+                echo "<h2>".$_GET["text"]."</h2>";
+            }
+        ?>
 
-            <form action='./RemoveApp.php' method='post'>
-                <input class="devices-inputs-delete" type="submit" value="Supprimer">
-            </form>
+        <!-- <div class="devices-inputs">
+            <form action='./mes_appareils.php' method='post'>
+                    <input class="inputs-add" type="submit" value="Ajouter">
+            </form> -->
         </div>
     </div>
 
