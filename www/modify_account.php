@@ -40,24 +40,26 @@
         <form class="formulaire" action="./modify.php" method="post">
             <?php
                 $sql="SELECT * FROM admin WHERE user='".$_SESSION["username"]."'";
-                $result=mysqli_query($link, $sql);
+                $result = mysqli_query($link, $sql);
                 $row = mysqli_fetch_array($result);
 
-                $name = $row["name"];
+                $user = $row["user"]; 
+                $mdp = $row["password"];
                 $first_name = $row["first_name"];
-                $mail = $row["email"];
+                $name = $row["name"];
                 $adresse = $row["adress"];
                 $phone = $row["phone_number"];
-
-                echo $mail;
-                echo $adresse;
-                echo "<input type='text' placeholder='modifiez votre prénom' name='new_first_name' value=$first_name>";
-                echo "<input type='text' placeholder='modifiez votre nom' name='new_name' value=$name>";
-                echo "<input type='text' placeholder='modifiez votre mail' name='new_mail' value=$mail>";
-                echo "<input type='text' placeholder='modifiez votre adresse' name='new_adresse' value=$adresse>";
-                echo "<input type='text' placeholder='modifiez votre téléphone' name='new_phone' value=$phone>";
-                echo '<input class="modify_button" type="submit" value="confirmer les modifications">';
-            ?>
+                $mail = $row["email"];
+                
+                echo  $user;
+                echo "<input type='password' placeholder='modifiez votre mot de passe' name='password' value='".$mdp."'>";
+                echo "<input type='text' placeholder='modifiez votre prénom' name='new_first_name' value='".$first_name."'>";
+                echo "<input type='text' placeholder='modifiez votre nom' name='new_name' value='".$name."'>";
+                echo "<input type='text' placeholder='modifiez votre téléphone' name='new_phone' value='".$phone."'>";
+                echo "<input type='text' placeholder='modifiez votre adresse' name='new_adresse' value='".$adresse."'>";
+                echo "<input type='text' placeholder='modifiez votre mail' name='new_mail' value='".$mail."'>";
+                echo "<input class='modify_button' type='submit' value='confirmer les modifications'>";
+                ?>
         </form>
 
         <div class="modifier">
