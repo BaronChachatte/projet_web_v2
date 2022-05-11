@@ -61,7 +61,12 @@
             <?php elseif(isset($_SESSION["username"])) : ?>
                 <form action='./deconnexion.php' method='post'>
                     <?php
-                        echo "<h2>".$_SESSION["username"]."</h2>";
+                         if (isset($_GET["text"]) && !empty($_GET["text"])) {
+                            echo "<h2>".$_GET["text"]."</h2>";
+                        }
+                        else{
+                            echo "<h2>".$_SESSION["username"]."</h2>";
+                        }
                     ?>
 
                     <input class="btn_login" type="submit" value="Log out">

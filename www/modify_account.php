@@ -44,7 +44,7 @@
                 $row = mysqli_fetch_array($result);
 
                 $user = $row["user"]; 
-                $mdp = $row["password"];
+                $mdp = ($row["password"]);
                 $first_name = $row["first_name"];
                 $name = $row["name"];
                 $adresse = $row["adress"];
@@ -52,13 +52,16 @@
                 $mail = $row["email"];
                 
                 echo  $user;
-                echo "<input type='password' placeholder='modifiez votre mot de passe' name='password' value='".$mdp."'>";
+                echo "<input type='password' placeholder='modifiez votre mot de passe' name='password'>";
                 echo "<input type='text' placeholder='modifiez votre prénom' name='new_first_name' value='".$first_name."'>";
                 echo "<input type='text' placeholder='modifiez votre nom' name='new_name' value='".$name."'>";
                 echo "<input type='text' placeholder='modifiez votre téléphone' name='new_phone' value='".$phone."'>";
                 echo "<input type='text' placeholder='modifiez votre adresse' name='new_adresse' value='".$adresse."'>";
                 echo "<input type='text' placeholder='modifiez votre mail' name='new_mail' value='".$mail."'>";
                 echo "<input class='modify_button' type='submit' value='confirmer les modifications'>";
+                if (isset($_GET["text"]) && !empty($_GET["text"])) {
+                    echo "<h2>".$_GET["text"]."</h2>";
+                }
                 ?>
         </form>
 
