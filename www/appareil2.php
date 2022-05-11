@@ -10,11 +10,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mes Appareils</title>
+    <title>Thermostat</title>
     <link rel="stylesheet" href="css/body.css">
     <link rel="stylesheet" href="css/navbar.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/mes_appareils.css">
+    <link rel="stylesheet" href="css/appareil4.css">
 </head>
 
 <body>
@@ -34,9 +34,11 @@
         </div>
     </nav>
 
-    <div class="devices-container">
-        <div class="devices">
+    <div class="active-device-container">
+        <div class="devices-container">
+            <div class="devices">
             <?php
+                $indexcategoriepage=2;
                 $sql="SELECT * FROM admin WHERE user='".$_SESSION["username"]."'";
                 $result=mysqli_query($link, $sql);
                 $row = mysqli_fetch_array($result);
@@ -50,12 +52,19 @@
                     $result=mysqli_query($link, $sql);
                     $ligne = mysqli_fetch_array($result);
                     $indexcategorie=$ligne["id_cat"];
-                    echo("<a href=\"appareil".$indexcategorie.".php\">".$nomappareil."</a>");
+                    if ($indexcategoriepage == $indexcategorie)
+                    {
+                        echo("<a class=\"active-device\" href=\"appareil".$indexcategorie.".php\">".$nomappareil."</a>");
+                    }
+                    else
+                    {
+                        echo("<a href=\"appareil".$indexcategorie.".php\">".$nomappareil."</a>");
+                    }
                 }
             ?>
-        </div>
-
-        <div class="devices-inputs">
+            </div>
+    
+            <div class="devices-inputs">
             <form action='./addApp.php' method='post'>
                 <input class="devices-inputs-add" type="submit" value="+">
             </form>
@@ -63,6 +72,16 @@
             <form action='./RemoveApp.php' method='post'>
                 <input class="devices-inputs-delete" type="submit" value="Supprimer">
             </form>
+        </div>
+    </div>
+    
+        <div class="active-device-settings">
+            <div class="active-device-img"></div>
+            <div class="boutton">
+                <button class="chaud">Warm up</button>
+                <button class="froid">Cool down</button>
+            </div>
+    
         </div>
     </div>
 
