@@ -43,8 +43,7 @@
                 $iduser=$row["index_id"];
                 $sql="SELECT * FROM appareil WHERE id_user='".$iduser."'";
                 $result1=mysqli_query($link, $sql);
-                while($row =  mysqli_fetch_array($result1))
-                {
+                while($row =  mysqli_fetch_array($result1)) {
                     $nomappareil=$row["nom_app"];
                     $sql="SELECT * FROM appareil WHERE id_user= ".$iduser." AND nom_app = '".$nomappareil."'";
                     $result=mysqli_query($link, $sql);

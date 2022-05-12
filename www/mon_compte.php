@@ -54,13 +54,13 @@
                     <input class="formulaire_logout" type="submit" value="Log out">
                 </form>
                 <form action="./delete.php">
-                    <input class="delete_account" type="submit" value="supprimer le compte">
+                    <input class="delete_account" type="submit" value="Supprimer le compte">
                 </form>
             </div>
         </div>
 
         <div class="modifier">
-            <a href="./modify_account.php">modifier vos données personnelles</a>
+            <a href="./modify_account.php">Modifier vos données personnelles</a>
         </div>
     </div>
 

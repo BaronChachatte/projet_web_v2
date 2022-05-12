@@ -78,9 +78,9 @@
         <div class="active-device-settings">
             <div class="active-device-img"></div>
             <div class="boutton">
-                <button class="ON"> Intensitée Max</button>
+                <button class="ON">Max</button>
                 <input type="range" id="light" min="0" max="100" step="1" >
-                <button class="OFF">Intensitée Min</button>
+                <button class="OFF">Min</button>
             </div>
         </div>
     </div>
